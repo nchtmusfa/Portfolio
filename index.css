@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: rgb(13, 10, 44);
+    --second-bg-color: purple;
+    --text-color: #fff;
+    --main-color: rgb(140, 0, 215);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    font-family: "Poppins", sans-serif;
+}
+
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: rgba(13, 10, 44, 0.75);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--main-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none;
+}
+
+@media (max-width:995px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid var(--main-color);
+        border-bottom: 3px solid var(--main-color);
+        border-bottom-left-radius: 2rem;
+        padding: 1rem 3%;
+        background-color: var(--second-bg-color);
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid var(--main-color);
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+    background: var(--bg-color);
+}
+
+.home .home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    position: relative;
+}
+
+.home-content p {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 30px;
+    color: white;
+}
+
+.home-content .btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: rgb(140, 0, 215);
+    border: 2px solid rgb(140, 0, 215);
+    border-radius: 8px;
+    font-size: 19px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s ease;
+}
+
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: rgb(140, 0, 215);
+}
+
+.btn-box a:nth-child(2):hover {
+    color: rgb(13, 10, 44);
+}
+
+.btn-box a:nth-child(2)::before {
+    background: rgb(140, 0, 215);
+}
+
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgb(13, 10, 44);
+    z-index: -1;
+    transition: .5s ease;
+}
+
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+/*----------Fin Home----------*/
+/*------------------------------*/
+/*----------Debut A Propos----------*/
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 0 10%;
+}
+
+.about h2 span {
+    color: rgb(140, 0, 215);
+    text-shadow: 0 0 50px;
+}
+
+.heading {
+    text-align: center;
+    font-size: 56px;
+}
+
+.about-content h2 {
+    text-align: left;
+    line-height: 1.5;
+    font-size: 56px;
+    font-weight: 700;
+}
+
+.about-content p {
+    font-size: 2rem;
+    margin: 0 0 30px;
+}
+
+/*----------Fin A propos----------*/
+/*------------------------------*/
+/*----------Debut Compétences----------*/
+.comp {
+    background: var(--bg-color);
+}
+
+.comp .heading {
+    color: var(--text-color);
+}
+
+.comp .container {
+    background: white;
+    color: var(--text-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 70%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.comp .container .row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    flex-wrap: wrap;
+    gap: 1.8rem;
+}
+
+.comp .container .bar {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 1rem;
+    background: var(--bg-color);
+    transition: 0.3s ease;
+}
+
+.comp .container .bar:hover {
+    box-shadow: 0 4px 10px var(--main-color);
+    transform: scale(1.03);
+}
+
+.comp .container .bar .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.comp .container .bar .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.comp .container .bar .info span {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+@media screen and (max-width:600px) {
+    .comp .container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .comp .container .row {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 1rem;
+        padding: 2rem 0.2rem 2rem 0.2rem;
+    }
+
+    .comp .container {
+        margin-top: 5px;
+        width: 100%;
+    }
+}
+
+/*----------Fin Compétences----------*/
+/*------------------------------*/
+/*----------Debut Parcours----------*/
+.parcours {
+    background: var(--bg-color);
+}
+
+.parcours .heading {
+    color: var(--text-color);
+}
+
+.parcours .timeline {
+    position: relative;
+    max-width: 1200;
+    margin: 0 auto;
+}
+
+.parcours .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -2px;
+}
+
+.parcours .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.parcours .container::after {
+    content: '\f501';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    right: -17px;
+    background-color: rgb(252, 252, 252);
+    border: 4px solid var(--main-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 100;
+    font-size: 1.89rem;
+    text-align: center;
+    font-weight: 600;
+    font-family: "Font Awesome\ 5 Free";
+    color: rgb(90, 64, 64);
+}
+
+.parcours .left {
+    left: 0;
+}
+
+.parcours .right {
+    left: 50%
+}
+
+.parcours .left::before {
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid var(--main-color);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--main-color);
+}
+
+.parcours .right::before {
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid var(--main-color);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--main-color);
+}
+
+.parcours .right::after {
+    left: -16px;
+}
+
+.parcours .content {
+    background: var(--main-color);
+    position: relative;
+    border-radius: 6px;
+}
+
+.parcours .content .tag {
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.parcours .content .decs {
+    margin-left: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.parcours .content .decs h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.parcours .content .decs p {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width:600px) {
+    .parcours .timeline {
+        margin-top: 2rem;
+    }
+
+    .parcours .timeline::after {
+        left: 31px;
+    }
+
+    .parcours .container {
+        width: 100%;
+        padding-left: 8rem;
+        padding-right: 2rem;
+    }
+
+    .parcours .container::after {
+        font-size: 2.2rem;
+    }
+
+    .parcours .container::before {
+        left: 61px;
+        border: medium solid var(--main-color);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--main-color) transparent transparent;
+    }
+
+    .parcours .left::after {
+        left: 15px;
+    }
+
+    .parcours .right::after {
+        left: 15px;
+    }
+
+    .parcours .right {
+        left: 0%;
+    }
+}
+
+/*----------Fin Parcours----------*/
+/*------------------------------*/
+/*----------Debut Projets----------*/
+.projet {
+    background: var(--bg-color);
+}
+
+.projet .heading {
+    color: var(--text-color);
+    margin-bottom: 4rem;
+}
+
+.projet-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.projet-container .projet-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    overflow: hidden;
+    display: flex;
+}
+
+.projet-box img {
+    width: 100%;
+    transition: .5s ease;
+}
+
+.projet-box:hover img {
+    transform: scale(1.1);
+}
+
+.projet-box .projet-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+
+.projet-box:hover .projet-layer {
+    transform: translateY(0);
+}
+
+.projet-layer h4 {
+    font-size: 4rem;
+    color: var(--text-color);
+}
+
+.projet-layer p,
+a {
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+    color: var(--text-color);
+}
+
+/*----------Fin Projets----------*/
+/*------------------------------*/
+/*----------Debut Contacts----------*/
+/* début Contact */
+.contact {
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+    ;
+    width: 100%;
+    display: grid;
+    height: 100%;
+    place-items: center;
+    padding: 20px 0px;
+}
+
+.title5 h2 {
+    color: white;
+    font-size: 48px;
+    width: 1130px;
+    margin: 20px auto;
+    text-align: center;
+    min-height: 120px;
+}
+
+.wrapper2 .button2 {
+    display: inline-block;
+    height: 120px;
+    width: 120px;
+    float: none;
+    margin: 0 5px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+}
+
+.wrapper2 .button2:hover {
+    transform: translateY(-20px);
+}
+
+.wrapper2 .button2 .icon2 {
+    display: inline-block;
+    height: 120px;
+    width: 120px;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+    box-sizing: border-box;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper2 .button2 .icon2 i {
+    font-size: 50px;
+    line-height: 120px;
+    transition: all 0.3s ease-out;
+}
+
+/* fin Contact */
+
+footer {
+    background: rgba(0, 0, 0, 0.2);
+    height: auto;
+    width: 100vw;
+    padding-top: 40px;
+    color: #fff;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content p {
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 10px;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    background: rgba(0, 0, 0, .1);
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.footer-bottom span {
+    color: rgb(140, 0, 215);
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
